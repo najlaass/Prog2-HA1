@@ -88,7 +88,23 @@ class CalculatorTest {
         assertEquals(expected, actual);
     }
 
+    //grüner Test
+    @Test
+    @DisplayName("should convert integer to percent value")
+    void testConvertToPercentValue() {
+        Calculator calc = new Calculator();
 
-    //TODO hier weitere Tests erstellen
+
+        calc.pressDigitKey(5);
+        calc.pressDigitKey(0);
+        calc.pressUnaryOperationKey("%");
+
+
+        String expected = "0.5";
+        String actual = calc.readScreen();
+
+
+        assertEquals(expected, actual);
+    }
+
 }
-
