@@ -94,15 +94,27 @@ class CalculatorTest {
     void testConvertToPercentValue() {
         Calculator calc = new Calculator();
 
-
         calc.pressDigitKey(5);
         calc.pressDigitKey(0);
         calc.pressUnaryOperationKey("%");
 
-
         String expected = "0.5";
         String actual = calc.readScreen();
 
+        assertEquals(expected, actual);
+    }
+
+    //roter Test-01
+    @Test
+    @DisplayName("should not display negative zero")
+    void testNegativeZero() {
+        Calculator calc = new Calculator();
+
+        calc.pressDigitKey(0);
+        calc.pressNegativeKey();
+
+        String expected = "0";
+        String actual = calc.readScreen();
 
         assertEquals(expected, actual);
     }
