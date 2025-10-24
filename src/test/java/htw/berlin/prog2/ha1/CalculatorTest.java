@@ -119,4 +119,16 @@ class CalculatorTest {
         assertEquals(expected, actual);
     }
 
+    //roter Test-02
+    @Test
+    @DisplayName("should trim .0 for unary results like sqrt")
+    void testTrimDotZeroForUnaryResults() {
+        Calculator calc = new Calculator();
+
+        calc.pressDigitKey(4);
+        calc.pressUnaryOperationKey("√");
+
+        assertEquals("2", calc.readScreen());
+    }
+
 }
