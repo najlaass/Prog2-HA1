@@ -105,6 +105,16 @@ public class Calculator {
      * entfernt und der Inhalt fortan als positiv interpretiert.
      */
     public void pressNegativeKey() {
+        if ("Error".equals(screen)) return;
+        try {
+            double v = Double.parseDouble(screen);
+            if (v == 0.0) {
+                screen = "0";
+                return;
+            }
+        } catch (NumberFormatException e) {
+            return;
+        }
         screen = screen.startsWith("-") ? screen.substring(1) : "-" + screen;
     }
 
