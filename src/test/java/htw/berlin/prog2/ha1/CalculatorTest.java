@@ -128,7 +128,10 @@ class CalculatorTest {
         calc.pressDigitKey(4);
         calc.pressUnaryOperationKey("√");
 
-        assertEquals("2", calc.readScreen());
+        String expected = "2";
+        String actual = calc.readScreen();
+
+        assertEquals(expected, actual);
     }
 
 }
